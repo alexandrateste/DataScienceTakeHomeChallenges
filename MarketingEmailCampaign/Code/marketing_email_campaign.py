@@ -16,7 +16,7 @@ plt.ion()
 
 def data_extraction(file, categorical_var_list):
     dframe = pd.read_csv(file)
-    print "Dimensions: ", dframe.shape
+    print("Dimensions: ", dframe.shape]
     print("Summary: %s" %dframe.describe())
     for col in dframe.columns:
         if col not in categorical_var_list:
