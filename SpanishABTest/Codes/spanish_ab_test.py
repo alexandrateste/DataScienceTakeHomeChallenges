@@ -16,8 +16,8 @@ def data_extraction(testfile, userfile):
     """
     test_df = pd.read_csv(testfile)
     user_df = pd.read_csv(userfile)
-    print test_df.shape
-    print user_df.shape
+    print(test_df.shape)
+    print(user_df.shape)
     merged_df = pd.merge(left=test_df, right=user_df, left_on='user_id', right_on='user_id', how='inner')
 
     return merged_df
@@ -32,8 +32,8 @@ def groupings(df0):
     dframe = df0.copy()
     language = dframe.groupby(['browser_language']).count()
     country = dframe.groupby(['country']).count()
-    print language
-    print country
+    print(language)
+    print(country)
 
 
 def data_of_interest(df0, confidence_level):
@@ -99,4 +99,4 @@ if __name__ == "__main__":
     # print merged_df.head()
     # print merged_df.describe()
     verdict = data_of_interest(merged_df, 0.95)
-    print verdict
+    print(verdict)

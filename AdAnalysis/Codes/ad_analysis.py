@@ -150,7 +150,7 @@ def smoothed_tseries(df0, element):
             master_smoothed = pd.concat([master_smoothed, smoothed], axis=1)
             smoothed.index = pd.to_datetime(smoothed.index)
             smoothed['delta_days'] = [(x-smoothed.index[0]).total_seconds()/86400. for x in smoothed.index]
-            print smoothed.head()
+            print(smoothed.head())
             smoothed = smoothed[np.isfinite(smoothed[ad])]
             result = np.polyfit(smoothed['delta_days'], smoothed[ad], 1)
             print("Parameters: %s" %result)

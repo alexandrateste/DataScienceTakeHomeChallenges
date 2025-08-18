@@ -23,7 +23,7 @@ def data_extraction(file, categorical_var_list):
             print("Non empty rows for %s: %s" %(col, np.sum(np.isfinite(dframe[col].ravel()))))
         else:
             subset = dframe[dframe[col] != '']
-            print "Non empty rows for ", col, ':', subset.shape[0]
+            print("Non empty rows for ", col, ':', subset.shape[0])
     # No data are missing
 
     return dframe
@@ -173,7 +173,7 @@ def statistical_results(df0):
 def correl(df0):
     dframe = df0.copy()
     dframe = dframe.drop(['email_id', 'purchase_group'],axis=1)
-    print dframe.head()
+    print(dframe.head())
     corr_matrix = dframe.corr()
     print("Correlation matrix:")
     print(corr_matrix)
